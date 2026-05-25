@@ -1,4 +1,4 @@
-# 🎓 BU CARE System - Ticket Management Module
+# E-TECH CUSTOMER SUPPORT CARE (Computer And Response Emergency)
 ## Web Systems and Technologies - Final Project/Exam
 
 ![Laravel](https://img.shields.io/badge/Laravel-11-red?style=for-the-badge)
@@ -12,7 +12,7 @@ A functional **ticket management module** for Bicol University's CARE (Customer 
 
 ## 📋 Project Overview
 
-**Module Title:** Technical Assistance Ticket Management System  
+**Module Title:** Customer Ticket Submission and Tracking Module 
 **Institution:** Bicol University  
 **Subject:** Web Systems and Technologies (Final Project)  
 **Submission Date:** May 25, 2026
