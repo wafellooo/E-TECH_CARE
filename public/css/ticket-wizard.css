@@ -1,0 +1,198 @@
+/* ==========================================================================
+   BICOL UNIVERSITY CARE SYSTEM — Isolated Ticket Wizard Component Architecture
+   ========================================================================== */
+
+/* --- MULTI-STEP BREADCRUMBS TRACK --- */
+.care-wizard-context .wz-steps-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+    padding: 10px 0;
+}
+
+.care-wizard-context .wz-line-base {
+    position: absolute;
+    top: 32px;
+    left: 5%;
+    right: 5%;
+    height: 4px;
+    background-color: #e2e8f0 !important;
+    z-index: 1;
+}
+
+.care-wizard-context .wz-line-fill {
+    position: absolute;
+    top: 32px;
+    left: 5%;
+    width: 0%;
+    height: 4px;
+    background-color: #081b5c !important; /* BU Navy Core Accent Anchor */
+    z-index: 2;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.care-wizard-context .wz-step-item {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    flex: 1;
+}
+
+/* Breadcrumb Circular Step Indicator Nodes */
+.care-wizard-context .wz-bubble-node {
+    width: 46px;
+    height: 46px;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    border: 3px solid #cbd5e1 !important;
+    color: #64748b !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1rem !important;
+    margin: 0 auto 8px auto !important;
+    transition: all 0.25s ease-in-out;
+}
+
+.care-wizard-context .wz-caption-label {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #64748b !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    display: block;
+}
+
+/* Stepper Bubble State Modifiers */
+.care-wizard-context .wz-step-item.active .wz-bubble-node {
+    border-color: #081b5c !important;
+    background-color: #d97706 !important; /* BU Amber Core Accent */
+    color: #ffffff !important;
+    box-shadow: 0 0 0 5px rgba(8, 27, 92, 0.15) !important;
+}
+
+.care-wizard-context .wz-step-item.active .wz-caption-label {
+    color: #081b5c !important;
+}
+
+.care-wizard-context .wz-step-item.completed .wz-bubble-node {
+    border-color: #081b5c !important;
+    background-color: #081b5c !important;
+    color: #ffffff !important;
+}
+
+.care-wizard-context .wz-step-item.completed .wz-caption-label {
+    color: #64748b !important;
+}
+
+/* --- STEP VIEW PANELS CONTROLLER --- */
+.care-wizard-context .wz-panel-view {
+    display: none !important;
+}
+
+.care-wizard-context .wz-panel-view.active {
+    display: block !important;
+    animation: wzSlideIn 0.25s ease-out forwards;
+}
+
+@keyframes wzSlideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- STEP 1: GRID-BASED CATEGORY CHANNELS --- */
+.care-wizard-context .wz-cat-card {
+    background-color: #ffffff !important;
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.care-wizard-context .wz-cat-card:hover {
+    border-color: #081b5c !important;
+    background-color: #f8fafc !important;
+    transform: translateY(-2px) !important;
+}
+
+.care-wizard-context .wz-cat-card.selected {
+    border-color: #081b5c !important;
+    background-color: rgba(8, 27, 92, 0.04) !important;
+    box-shadow: 0 0 0 3px rgba(8, 27, 92, 0.1) !important;
+}
+
+/* Reserved Image / Symbol Space Inside Category Cards */
+.care-wizard-context .wz-img-frame {
+    background-color: #f1f5f9 !important;
+    border: 1px dashed #cbd5e1 !important;
+    border-radius: 6px !important;
+    height: 120px;
+    width: 100%;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    overflow: hidden;
+}
+
+.care-wizard-context .wz-img-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 4px !important;
+}
+
+.care-wizard-context .wz-svg-icon {
+    width: 32px !important;
+    height: 32px !important;
+    stroke: #4d7ab5 !important;
+    fill: none !important;
+}
+
+.care-wizard-context .wz-img-alt {
+    font-size: 10px !important;
+    color: #94a3b8 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    margin-top: 4px;
+}
+
+/* --- TEXT AREA AND DETAILS UTILITIES --- */
+.care-wizard-context .xsmall {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+}
+
+.care-wizard-context .wz-review-title {
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-weight: 700 !important;
+    color: #94a3b8 !important;
+}
+
+/* --- MOBILE RESPONSIVE ADAPTABILITY SHIFTS --- */
+@media (max-width: 768px) {
+    .care-wizard-context .wz-caption-label {
+        display: none !important; /* Hide labels on tablet/mobile to avoid compression breakages */
+    }
+    .care-wizard-context .wz-bubble-node {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 0.9rem !important;
+        margin-bottom: 0 !important;
+    }
+    .care-wizard-context .wz-line-base, 
+    .care-wizard-context .wz-line-fill {
+        top: 28px !important;
+    }
+    .care-wizard-context .wz-img-frame {
+        height: 85px !important;
+    }
+}

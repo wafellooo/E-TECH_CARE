@@ -1,0 +1,370 @@
+/* ==========================================================================
+   BICOL UNIVERSITY CARE SYSTEM — customer-dashboard.css
+   Clean Academic Helpdesk Portal Design System (Bootstrap 5 Companion)
+   ========================================================================== */
+
+:root {
+    --bu-navy: #081b5c;       /* Official Deep Academic Blue */
+    --bu-navy-dark: #040e33;  /* High-contrast text & backgrounds */
+    --bu-gold: #ffd84d;       /* Traditional Accent Gold */
+    --bu-amber: #d97706;      /* High-contrast functional warning statuses */
+    --slate-50: #f8fafc;      /* Background fills */
+    --slate-100: #f1f5f9;     /* Soft dividing borders */
+    --slate-700: #334155;     /* High-legibility body typography */
+    --slate-400: #94a3b8;     /* Muted structural labels */
+    
+    --status-open: #2563eb;    /* Active blue tracking */
+    --status-resolved: #16a34a;/* Success green status */
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #f4f6f9;
+    color: var(--slate-700);
+}
+
+h1, h2, h3, h4, h5, .app-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--bu-navy);
+}
+
+/* --- SIDEBAR WORKSPACE BRANDING --- */
+.sidebar-panel {
+    min-width: 280px;
+    max-width: 280px;
+    background-color: var(--bu-navy);
+    border-right: 4px solid var(--bu-gold);
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.sidebar-panel .app-logo {
+    color: #ffffff !important;
+    font-weight: 800;
+    font-size: 1.35rem;
+    letter-spacing: -0.5px;
+}
+
+.sidebar-panel .app-logo span {
+    color: var(--bu-gold);
+}
+
+.sidebar-menu .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 12px 20px;
+    margin: 4px 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.sidebar-menu .nav-link:hover, 
+.sidebar-menu .nav-link.active {
+    color: var(--bu-navy) !important;
+    background-color: var(--bu-gold) !important;
+    font-weight: 700;
+}
+
+/* --- LOGOUT BUTTON STYLING --- */
+#account-signout-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 12px 20px;
+    margin: 4px 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+#account-signout-link:hover {
+    color: #ffffff !important;
+    background-color: rgba(139, 0, 0, 0.4) !important;
+    font-weight: 600;
+}
+
+/* --- MAIN WORKSPACE OVERVIEW --- */
+.main-wrapper {
+    margin-left: 280px;
+    padding: 40px 50px;
+    min-height: 100vh;
+}
+
+/* --- HELPDESK SUMMARY WIDGET CARDS --- */
+.summary-card {
+    background: #ffffff;
+    border: 1px solid var(--slate-100);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    transition: transform 0.2s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-2px);
+}
+
+.summary-card .count {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--bu-navy);
+    line-height: 1.1;
+}
+
+.summary-card .label {
+    color: var(--slate-400);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.icon-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+/* --- CUSTOMER LEDGER TABLE --- */
+.ticket-container-card {
+    background: #ffffff;
+    border: 1px solid var(--slate-100);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+}
+
+.table-panel th {
+    background-color: var(--slate-50);
+    color: var(--slate-700);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 18px 24px;
+    border-bottom: 2px solid var(--slate-100);
+}
+
+.table-panel td {
+    padding: 18px 24px;
+    font-size: 1.05rem;
+    vertical-align: middle;
+    line-height: 1.6;
+}
+
+/* Tracking ID — monospace, bolder */
+.table-panel td .font-monospace {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Category column */
+.table-panel td.text-secondary {
+    font-size: 1rem;
+    color: var(--slate-400) !important;
+}
+
+/* Description summary */
+.table-panel .text-truncate {
+    font-size: 1.05rem;
+    max-width: 280px;
+}
+
+/* Date column */
+.table-panel .small,
+.table-panel td .small {
+    font-size: 1rem !important;
+}
+
+/* Dash for non-actionable rows */
+.action-dash {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* --- CLOSED/SOFT-DELETED TICKET STYLING --- */
+tr.status-closed {
+    opacity: 0.55;
+    background-color: #fafafa !important;
+    color: #757575;
+}
+
+tr.status-closed td {
+    color: #9e9e9e;
+}
+
+/* --- INTERACTIVE PILLS & SELECTIONS --- */
+.badge-status {
+    padding: 8px 14px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge-status-pending {
+    background-color: rgba(217, 119, 6, 0.1);
+    color: var(--bu-amber);
+}
+
+.badge-status-resolved {
+    background-color: rgba(22, 163, 74, 0.1);
+    color: var(--status-resolved);
+}
+
+/* --- ACTION BUTTONS IN TICKET TABLE --- */
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.18s ease;
+    white-space: nowrap;
+    border: 1.5px solid transparent;
+    line-height: 1.4;
+}
+
+.btn-action-edit {
+    background-color: rgba(8, 27, 92, 0.07);
+    color: var(--bu-navy);
+    border-color: rgba(8, 27, 92, 0.18);
+}
+
+.btn-action-edit:hover {
+    background-color: var(--bu-navy);
+    color: #ffffff;
+    border-color: var(--bu-navy);
+}
+
+.btn-action-cancel {
+    background-color: rgba(220, 53, 69, 0.07);
+    color: #dc3545;
+    border-color: rgba(220, 53, 69, 0.2);
+}
+
+.btn-action-cancel:hover {
+    background-color: #dc3545;
+    color: #ffffff;
+    border-color: #dc3545;
+}
+
+.btn-bu-primary {
+    background-color: var(--bu-navy);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 24px;
+    border-radius: 6px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-bu-primary:hover {
+    background-color: var(--bu-navy-dark);
+    color: #ffffff;
+}
+
+.search-bar-input {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    border-radius: 6px 0 0 6px;
+    border: 1px solid #cbd5e1;
+}
+
+.search-bar-input:focus {
+    border-color: var(--bu-navy);
+    box-shadow: 0 0 0 3px rgba(8, 27, 92, 0.1);
+}
+/* --- CANCEL CONFIRMATION MODAL --- */
+.cancel-modal-dialog {
+    max-width: 420px;
+}
+
+.cancel-modal-content {
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.cancel-modal-body {
+    padding: 32px 32px 28px;
+}
+
+.cancel-modal-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.cancel-modal-subtitle {
+    font-size: 0.97rem;
+    color: #6b7280;
+    line-height: 1.55;
+    margin: 0 0 28px 0;
+}
+
+.cancel-modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cancel-modal-actions form {
+    margin: 0;
+}
+
+.btn-cancel-keep {
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1.5px solid #d1d5db;
+    background: #ffffff;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.btn-cancel-keep:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.btn-cancel-confirm {
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    background: #dc2626;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.btn-cancel-confirm:hover {
+    background: #b91c1c;
+}

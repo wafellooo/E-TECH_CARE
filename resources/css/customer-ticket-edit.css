@@ -1,0 +1,19 @@
+/* ──────────────────────────────────────────────────────────
+   BICOL UNIVERSITY CARE — customer-ticket-edit.css
+   Styles for ticket edit form (edit.blade.php)
+   ────────────────────────────────────────────────────────── */
+
+.field-readonly {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.875rem;
+    color: #495057;
+}
+
+.badge-status-pending   { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+.badge-status-assigned  { background: #cfe2ff; color: #084298; border: 1px solid #0d6efd; }
+.badge-status-ongoing   { background: #d1ecf1; color: #0c5460; border: 1px solid #17a2b8; }
+.badge-status-resolved  { background: #d1e7dd; color: #0f5132; border: 1px solid #198754; }
+.badge-status-closed    { background: #e2e3e5; color: #383d41; border: 1px solid #6c757d; }

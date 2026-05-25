@@ -1,0 +1,123 @@
+/* ══════════════════════════════════════════════
+   BU CARE SYSTEM — ticket-form.css
+   Form Interface Presentation Design Layer
+══════════════════════════════════════════════ */
+
+:root {
+    --bu-navy: #081b5c;
+    --bu-navy-dark: #040e33;
+    --bu-gold: #ffd84d;
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-400: #94a3b8;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+}
+
+body {
+    background-color: var(--slate-50);
+    color: var(--slate-800);
+}
+
+/* Navbar Extension */
+.form-nav {
+    background-color: var(--bu-navy);
+    border-bottom: 4px solid var(--bu-gold);
+    padding: 14px 0;
+}
+
+.form-brand {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.form-brand span { color: var(--bu-gold); }
+
+/* Form Card Structuring */
+.form-workspace-card {
+    background: #ffffff;
+    border: 1px solid var(--slate-200);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    padding: 32px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.form-header-title {
+    font-family: 'Inter', sans-serif;
+    color: var(--bu-navy);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Interactive Input Elements */
+.bu-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--slate-700);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.bu-control {
+    border: 1px solid var(--slate-200);
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.bu-control:focus {
+    border-color: var(--bu-navy);
+    box-shadow: 0 0 0 3px rgba(8, 27, 92, 0.1);
+    outline: none;
+}
+
+.form-hint {
+    font-size: 0.8rem;
+    color: var(--slate-400);
+    margin-top: 4px;
+}
+
+/* Button Configurations */
+.btn-bu-save {
+    background-color: var(--bu-navy);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+.btn-bu-save:hover { background-color: var(--bu-navy-dark); }
+
+.btn-bu-cancel {
+    background-color: transparent;
+    color: var(--slate-700);
+    border: 1px solid var(--slate-200);
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+.btn-bu-cancel:hover {
+    background-color: var(--slate-100);
+    color: var(--slate-800);
+}
+
+/* Alert Banner Styling */
+.validation-alert-banner {
+    background-color: #fef2f2;
+    border-left: 4px solid #dc2626;
+    color: #991b1b;
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}

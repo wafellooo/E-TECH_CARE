@@ -1,0 +1,74 @@
+/* ==========================================================================
+   BICOL UNIVERSITY CARE SYSTEM — customer-ticket-tabs.css
+   Ticket List Filter Bar: Search Input + Status Tab Pills
+   ========================================================================== */
+
+/* ── Search input wrapper ── */
+.search-icon-wrapper {
+    position: relative;
+}
+
+.search-icon-wrapper i {
+    position: absolute;
+    top: 50%;
+    left: .85rem;
+    transform: translateY(-50%);
+    font-size: .85rem;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.search-icon-wrapper .form-control {
+    padding-left: 2.2rem;
+    border-radius: 20px;
+    border-color: #dee2e6;
+    font-size: .85rem;
+    transition: border-color .2s;
+}
+
+.search-icon-wrapper .form-control:focus {
+    box-shadow: none;
+    border-color: var(--bu-navy, #081b5c);
+}
+
+/* ── Result count label ── */
+#ticket-count {
+    font-size: .78rem;
+    color: #94a3b8;
+    margin-bottom: .5rem;
+}
+
+/* ── Status filter tab pills ── */
+#status-tabs {
+    font-size: .8rem;
+}
+
+.status-tab {
+    background: none;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    padding: .25rem .85rem;
+    color: #6c757d;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s, color .15s, border-color .15s;
+    white-space: nowrap;
+    line-height: 1.6;
+}
+
+.status-tab:hover {
+    background: #f1f3f5;
+    color: #343a40;
+    border-color: #adb5bd;
+}
+
+.status-tab.active {
+    background: var(--bu-navy, #081b5c);
+    color: #ffffff;
+    border-color: var(--bu-navy, #081b5c);
+}
+
+/* ── Hidden row utility (used by JS filter) ── */
+#tickets-table tbody tr.hidden-row {
+    display: none;
+}

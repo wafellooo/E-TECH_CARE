@@ -1,0 +1,156 @@
+/* ──────────────────────────────────────────────────────────
+   BICOL UNIVERSITY CARE — customer-ticket-show.css
+   Styles for ticket detail view (show.blade.php)
+   ────────────────────────────────────────────────────────── */
+
+/* ── Detail card ── */
+.detail-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,.06);
+}
+.detail-card-title {
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #6c757d;
+    margin-bottom: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border-bottom: 1px solid #f1f3f5;
+    padding-bottom: .7rem;
+}
+.detail-card-title i { color: var(--bu-navy, #0a1628); }
+
+/* ── Field grid ── */
+.field-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.1rem 1.5rem;
+}
+.field-item label {
+    display: block;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #adb5bd;
+    margin-bottom: .25rem;
+}
+.field-item .field-value {
+    font-size: .92rem;
+    color: #212529;
+    font-weight: 500;
+}
+.field-item .field-value.mono {
+    font-family: 'Courier New', monospace;
+    font-size: .88rem;
+    color: var(--bu-navy, #0a1628);
+    font-weight: 700;
+}
+
+/* ── Description block ── */
+.desc-block {
+    background: #f8f9fa;
+    border-left: 3px solid var(--bu-navy, #0a1628);
+    border-radius: 0 6px 6px 0;
+    padding: 1rem 1.2rem;
+    font-size: .92rem;
+    color: #343a40;
+    line-height: 1.65;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* ── Status pill ── */
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: .35rem .9rem;
+    white-space: nowrap;
+}
+.status-pill.pending  { background:rgba(255,193,7,.15);  color:#997404; border:1px solid rgba(255,193,7,.4); }
+.status-pill.assigned { background:rgba(13,202,240,.12); color:#087990; border:1px solid rgba(13,202,240,.35); }
+.status-pill.ongoing  { background:rgba(13,110,253,.1);  color:#084298; border:1px solid rgba(13,110,253,.3); }
+.status-pill.resolved { background:rgba(25,135,84,.12);  color:#146c43; border:1px solid rgba(25,135,84,.3); }
+.status-pill.closed   { background:rgba(108,117,125,.12);color:#495057; border:1px solid rgba(108,117,125,.3); }
+.status-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse-dot 2s infinite;
+}
+.status-pill.resolved .status-dot,
+.status-pill.closed   .status-dot { animation: none; }
+@keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* ── Chips ── */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    font-size: .8rem;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: .28rem .7rem;
+    text-transform: capitalize;
+}
+.chip-category { background:rgba(8,27,92,.07); color:var(--bu-navy,#0a1628); border:1px solid rgba(8,27,92,.15); }
+.chip-priority-low    { background:rgba(25,135,84,.1);  color:#146c43; border:1px solid rgba(25,135,84,.25); }
+.chip-priority-medium { background:rgba(255,193,7,.12); color:#997404; border:1px solid rgba(255,193,7,.3); }
+.chip-priority-high   { background:rgba(220,53,69,.1);  color:#842029; border:1px solid rgba(220,53,69,.25); }
+
+/* ── Hero band ── */
+.ticket-hero {
+    background: linear-gradient(135deg, var(--bu-navy,#0a1628) 0%, #1a3a5c 100%);
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.4rem;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.ticket-hero::after {
+    content:'';
+    position:absolute; top:-60px; right:-60px;
+    width:220px; height:220px; border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.04) 0%,transparent 70%);
+    pointer-events:none;
+}
+.ticket-id-badge {
+    font-family:'Courier New',monospace;
+    font-size:.9rem; font-weight:700;
+    letter-spacing:.1em;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:5px;
+    padding:.2rem .65rem;
+    display:inline-block;
+    margin-bottom:.5rem;
+}
+.ticket-hero h2 { font-size:1.4rem; font-weight:700; margin:0 0 .3rem; }
+.ticket-hero .meta { font-size:.82rem; color:rgba(255,255,255,.65); }
+.ticket-hero .meta i { color:rgba(255,255,255,.45); }
+
+/* ── Action text links ── */
+.action-bar { margin-top: 1.8rem; display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap; }
+.action-bar a, .action-bar button.text-link {
+    background:none; border:none; padding:0; cursor:pointer;
+    font-size:.88rem; font-weight:600; text-decoration:none;
+}
+.action-bar .link-edit   { color:#0d6efd; }
+.action-bar .link-edit:hover { text-decoration:underline; }
+.action-bar .link-cancel { color:#dc3545; }
+.action-bar .link-cancel:hover { text-decoration:underline; }
+.action-bar .link-locked { color:#adb5bd; font-size:.82rem; }
